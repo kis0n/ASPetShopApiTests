@@ -9,7 +9,6 @@ class TestPet:
     def test_delete_nonexistent_pet(self): #название теста, функция пайтест
         with allure.step("Отправка запроса на удаление несуществующего питомца"): #описание шага в алюр
             responce = requests.delete(url=f"{BASE_URL}/pet/9999")
-            print
 
         with allure.step("Проверка текста ответа"):
             assert responce.text == 'Pet deleted', "Текст ответа не совпал с ожидаемым"
