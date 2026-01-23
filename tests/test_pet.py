@@ -33,3 +33,33 @@ class TestPet:
         with allure.step("Проверка текста ответа"):
             assert response.text == 'Pet not found', "Текст ответа не совпал с ожидаемым"
 
+
+    @allure.title("Попытка получить информацю о несуществующем питомце")
+    def test_get_info_nonexistent_pet(self):
+        with allure.step("Отправка запроса на поличение информации о питомце"):
+            responce = requests.get(url=f"{BASE_URL}/pet/9999")
+
+        with allure.step("Проверка статуса запроса"):
+            assert responce.status_code == 404, "Код ответа не совпал с ожидаемым"
+
+
+
+    # @allure.title("Добавление нового питомца")
+    # def test_create_new_pet(self):
+    #     new_pet_data = {
+    #         "id": 1,
+    #         "name": "Buddy",
+    #         "status": "available"
+    #     }
+    #     with allure.step("Отправка запроса на добавление нового питомца"):
+    #         response = requests.post(url=f"{BASE_URL}/pet", json=new_pet_data)
+    #
+    #     with allure.step("Проверка кода ответа"):
+    #         assert response.status_code == 200, "Код ответа не совпал с ожидаемым"
+    #
+    #     with allure.step("Проверка содержимого ответа"):
+    #         response_body = response.json()
+    #
+    #         for key, value in new_pet_data.items():
+    #             assert response_body[key] == value, f"Поле {key} не совпадает с ожидаемым"
+
