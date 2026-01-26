@@ -67,7 +67,7 @@ class TestPet:
             assert response_json["name"] == new_pet_data["name"], "name питомца не совпал с ожидаемым"
             assert response_json["status"] == new_pet_data["status"], "status питомца не совпал с ожидаемым"
 
-    @allure.title("Добавление нового питомца №2")  # Автоматизация тексткейса 41
+    @allure.title("Добавление нового питомца 2")  # Автоматизация тексткейса 41
     def test_create_new_pet(self):
         with allure.step("Подготовка данных для создания нового питомца"):
             new_pet_data = {
