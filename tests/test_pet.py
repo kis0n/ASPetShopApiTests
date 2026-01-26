@@ -19,7 +19,7 @@ class TestPet:
             assert response.status_code == 200, "Код ответа не совпал с ожидаемым"
 
 
-    @allure.title("Попытка обновить несуществующего пользователя")
+    @allure.title("Попытка обновить несуществующего питомца")
     def test_update_nonexistent_pet(self):
         new_data = {
             "id": 9999,
@@ -67,7 +67,8 @@ class TestPet:
             assert response.json["name"] == new_pet_data["name"], "name питомца не совпал с ожидаемым"
             assert response.json["status"] == new_pet_data["status"], "status питомца не совпал с ожидаемым"
 
-    @allure.title ("Добавление нового питомца") # Автоматизация тексткейса 41
+
+    @allure.title ("Добавление нового питомца №2")  # Автоматизация тексткейса 41
     def test_create_new_pet(self):
         new_pet_data = {
             "id": 1,
