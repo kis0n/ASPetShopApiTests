@@ -43,7 +43,7 @@ class TestPet:
         with allure.step("Проверка статуса запроса"):
             assert responce.status_code == 404, "Код ответа не совпал с ожидаемым"
 
-    @allure.title("Добавление нового питомца 1")
+    @allure.title("Добавление нового питомца с неполными данными")
     def test_add_pet(self):
         with allure.step("Подготовка данных для создания питомца"):
             new_pet_data = {
@@ -67,8 +67,8 @@ class TestPet:
             assert response_json["name"] == new_pet_data["name"], "name питомца не совпал с ожидаемым"
             assert response_json["status"] == new_pet_data["status"], "status питомца не совпал с ожидаемым"
 
-    @allure.title("Добавление нового питомца 2")  # Автоматизация тексткейса 41
-    def test_create_new_pet(self):
+    @allure.title("Добавление нового питомца с полными данными")  # Автоматизация тексткейса 41
+    def test_add_pet_with_full_data(self):
         with allure.step("Подготовка данных для создания нового питомца"):
             new_pet_data = {
                 "id": 1,
@@ -91,3 +91,4 @@ class TestPet:
             assert response_json["id"] == new_pet_data["id"], "id питомца не совпал с ожидаемым"
             assert response_json["name"] == new_pet_data["name"], "name питомца не совпал с ожидаемым"
             assert response_json["status"] == new_pet_data["status"], "status питомца не совпал с ожидаемым"
+
