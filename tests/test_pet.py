@@ -151,7 +151,7 @@ class TestPet:
             ("available", 200),
             ("sold", 200),
             ("pending", 200),
-            ("bukibyaki", 400),
+            ("bukibyak", 400),
             ("", 400)
         ]
     )
