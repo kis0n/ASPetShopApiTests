@@ -84,3 +84,4 @@ class TestStore:
             assert isinstance(response.json(), dict), "Данные в ответе не соответствуют ожидаемым"
 
 
+
